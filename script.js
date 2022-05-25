@@ -95,7 +95,41 @@ function generatePassword() {
 
   if(confirmLowerCase && confirmUpperCase && confirmNumbers && confirmSpecialChar) {
     selectedPwArray = lowerCaseArr.concat(upperCaseArr,numberArr,specialCharArr);
-  }
+
+  } else if(confirmLowerCase && confirmUpperCase && confirmNumbers) {
+    selectedPwArray = lowerCaseArr.concat(upperCaseArr,numberArr);
+    
+  } else if(confirmLowerCase && confirmSpecialChar) {
+    selectedPwArray = lowerCaseArr.concat(specialCharArr);
+
+  } else if(confirmLowerCase && confirmUpperCase) {
+    selectedPwArray = lowerCaseArr.concat(upperCaseArr);
+
+  } else if(confirmLowerCase) {
+    selectedPwArray = lowerCaseArr;
+
+  } else if(confirmUpperCase && confirmNumbers) {
+    selectedPwArray = upperCaseArr.concat(numberArr);
+
+  } else if(confirmUpperCase && confirmSpecialChar) {
+    selectedPwArray = upperCaseArr.concat(specialCharArr);
+
+  } else if(confirmUpperCase) {
+    selectedPwArray = upperCaseArr;
+
+  } else if(confirmNumbers && confirmSpecialChar) {
+    selectedPwArray = numberArr.concat(specialCharArr);
+
+  } else if(confirmNumbers) {
+    selectedPwArray = numberArr;
+
+  } else {
+    selectedPwArray = specialCharArr;
+  };
+
+  // else if(confirmUpperCase && !confirmLowerCase && confirmNumbers && !confirmSpecialChar) {
+    // selectedPwArray = upperCaseArr.concat(NumberArr);
+  // };
 
   // randomize the selected array order 
   selectedPwArray.sort(() => Math.random() - 0.5);
@@ -103,9 +137,6 @@ function generatePassword() {
   passwordCharacters = selectedPwArray.join('');
 
 
-
-
-  
   for (i = 0; i < length; i++) {
   console.log(passwordCharacters[i]);
   }
@@ -117,25 +148,3 @@ function generatePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-
-
-
-
-
-
-
-// let letters = lowCaseArr.concat(upperCaseArr);
-// // console.log(letters);
-
-// // console.log(typeof(letters));
-
-
-// // randomize the order of the array
-// function shuffle(array) {
-//     array.sort(() => Math.random() - 0.5);
-// };
-
-
-
-
