@@ -10,7 +10,7 @@ function writePassword() {
 
 }
 
-function writePassword() {
+function generatePassword() {
   // promt user for password length
   // pwLength = prompt("Enter the lenght for your password");
   getLength();
@@ -66,7 +66,51 @@ function writePassword() {
       alert("You must select at least 1 criterium for your password");
       getCriteria();
     }
+
   };
+
+
+  let passwordCharacters = [];
+
+  // Begin arrays for character types
+  // Array for lower case letters
+  let lowerCaseArr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  // passwordCharacters = lowerCaseArr.join('');
+  
+  // upper case letters array
+  let upperCaseArr = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  // passwordCharacters = upperCaseArr.join('');
+
+  // number array
+  let numberArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+
+
+  // specail characters array
+  let specialCharArr = ['!', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '^', ']', '_', '`', '{', '|', '~', '}'];
+
+  // end arrays for charachter types
+
+  // select array for password: 
+  selectedPwArray = [];
+
+  if(confirmLowerCase && confirmUpperCase && confirmNumbers && confirmSpecialChar) {
+    selectedPwArray = lowerCaseArr.concat(upperCaseArr,numberArr,specialCharArr);
+  }
+
+  // randomize the selected array order 
+  selectedPwArray.sort(() => Math.random() - 0.5);
+
+  passwordCharacters = selectedPwArray.join('');
+
+
+
+
+  
+  for (i = 0; i < length; i++) {
+  console.log(passwordCharacters[i]);
+  }
+
+  return passwordCharacters;
 
 }
 
@@ -78,22 +122,8 @@ generateBtn.addEventListener("click", writePassword);
 
 
 
-// // lowr case letter to array
-// let lowCaseList = ("a b c d e f g h i j k l m n o p q r s t u v w x y z");
-// let lowCaseArr = lowCaseList.split(" ");
 
 
-// // upper case letters to arrays
-// let upperCaseList = ("A B C D E F G H I J K L M N O P Q R S T U V W X Y Z");
-// let upperCaseArr = upperCaseList.split(" ");
-
-// // number to array
-// let numberList = ("0 1 2 3 4 5 6 7 8 9");
-// let numberArr = numberList.split(" ");
-
-// // specail characters to array
-// let specialCharList = ("! # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ^ ] _ ` { | ~ }")
-// let specialCharArr = specialCharList.split(" ");
 
 // let letters = lowCaseArr.concat(upperCaseArr);
 // // console.log(letters);
@@ -101,15 +131,11 @@ generateBtn.addEventListener("click", writePassword);
 // // console.log(typeof(letters));
 
 
-// // radomize the order of the array
+// // randomize the order of the array
 // function shuffle(array) {
 //     array.sort(() => Math.random() - 0.5);
 // };
 
 
-// shuffle(letters);
-// console.log(letters);
 
-// for (i = 0; i < 5; i++) {
-//    console.log(letters[i]);
-// }
+
