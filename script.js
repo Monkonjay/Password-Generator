@@ -13,23 +13,23 @@ function writePassword() {
 function generatePassword() {
   // promt user for password length
   // pwLength = prompt("Enter the lenght for your password");
-  getLength();
+  getPasswordLength();
   getCriteria();
 
 
-  function getLength() {
+  function getPasswordLength() {
 
-    length = parseInt(prompt("Enter length for your password"));
+    passwordLength = parseInt(prompt("Enter length for your password"));
     
     // ensure lenth is an integer
-    if(!Number.isInteger(length)) {
+    if(!Number.isInteger(passwordLength)) {
       alert("Entry must be an integer");
-      getLength();
+      getPasswordLength();
     
     // alert user if length not between 8 and 128 
-    } else if(length < 8 || length > 128) {     
+    } else if(passwordLength < 8 || passwordLength > 128) {     
       alert("Password length must be between 8 and 128 characters long");
-      getLength();
+      getPasswordLength();
     };
    
   };
@@ -70,7 +70,7 @@ function generatePassword() {
   };
 
 
-  let passwordCharacters = [];
+  let finalPassword = [];
 
   // Begin arrays for character types
   // Array for lower case letters
@@ -134,16 +134,19 @@ function generatePassword() {
   // randomize the selected array order 
   selectedPwArray.sort(() => Math.random() - 0.5);
 
-  passwordCharacters = selectedPwArray.join('');
+  // console.log(typeof(selectedPwArray));
+
+  // for(i = 0; i < passwordLength; i++) {
+    
+  // }
+
+  finalPassword = selectedPwArray.join('');
 
 
-  for (i = 0; i < length; i++) {
-  console.log(passwordCharacters[i]);
-  }
-
-  return passwordCharacters;
+  return finalPassword.slice(0, passwordLength);
 
 }
+
 
 
 // Add event listener to generate button
