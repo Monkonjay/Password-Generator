@@ -141,12 +141,15 @@ function generatePassword() {
   // }
 
   finalPassword = selectedPwArray.join('');
+  // let extendPw = ("");
 
+  // do {extendPw+= finalPassword} while(extendPw.length >= passwordLength);
 
   return finalPassword.slice(0, passwordLength);
+  // return extendPw.split("").slice(0, passwordLength);
+
 
 }
-
 
 
 // Add event listener to generate button
