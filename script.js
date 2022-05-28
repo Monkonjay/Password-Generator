@@ -84,14 +84,13 @@ function generatePassword() {
   // number array
   let numberArr = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 
-
   // specail characters array
   let specialCharArr = ['!', '#', '$', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/', ':', ';', '<', '=', '>', '?', '@', '[', '^', ']', '_', '`', '{', '|', '~', '}'];
 
   // end arrays for charachter types
 
   // select array for password: 
-  selectedPwArray = [];
+  let selectedPwArray = [];
 
   if(confirmLowerCase && confirmUpperCase && confirmNumbers && confirmSpecialChar) {
     selectedPwArray = lowerCaseArr.concat(upperCaseArr,numberArr,specialCharArr);
@@ -127,28 +126,19 @@ function generatePassword() {
     selectedPwArray = specialCharArr;
   };
 
-  // else if(confirmUpperCase && !confirmLowerCase && confirmNumbers && !confirmSpecialChar) {
-    // selectedPwArray = upperCaseArr.concat(NumberArr);
-  // };
-
   // randomize the selected array order 
   selectedPwArray.sort(() => Math.random() - 0.5);
 
-  // console.log(typeof(selectedPwArray));
-
   // for(i = 0; i < passwordLength; i++) {
     
-  // }
-
   finalPassword = selectedPwArray.join('');
   // let extendPw = ("");
+
 
   // do {extendPw+= finalPassword} while(extendPw.length >= passwordLength);
 
   return finalPassword.slice(0, passwordLength);
   // return extendPw.split("").slice(0, passwordLength);
-
-
 }
 
 
