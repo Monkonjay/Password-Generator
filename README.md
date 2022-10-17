@@ -51,7 +51,7 @@ THEN the password is either displayed in an alert or written to the page
 
 ### Links
 
-- Solution URL: [Prefessional README Generator](https://github.com/Monkonjay/Password-Generator.git)
+- Solution URL: [Password Generator](https://github.com/Monkonjay/Password-Generator.git)
 - Live Site: [Test the Project](https://monkonjay.github.io/Password-Generator/)
 
 ## My process
@@ -75,9 +75,5 @@ generateBtn.addEventListener("click", writePassword);
 
 ## Author
 
-- Website - [Robert M Greene]( https://monkonjay.github.io/Portforlio-Page/)
+- Website - [Robert M Greene]( https://monkonjay.github.io/Portfolio/)
 - Github - [Monkonjay](https://github.com/Monkonjay)
-
-
-
-
